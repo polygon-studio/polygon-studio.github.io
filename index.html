@@ -1,7 +1,44 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with Github Pages.</p>
-</body>
+<html lang="en">
+    <head>
+        <title>Polygon.Studio</title>
+    </head>
+    <body ontouchstart="">
+        <!-- 3D Canvas --> 		<script src="js/three.min.js"></script> 		<script src="js/app.js"></script> 		 		<script>
+
+			var loader = new THREE.XHRLoader();
+			loader.load( 'app.json', function ( text ) {
+
+				var json = JSON.parse( text );
+
+				var player = new APP.Player();
+				player.load( json );
+				player.setSize( window.innerWidth, window.innerHeight );
+				player.play();
+
+				document.body.appendChild( player.dom );
+
+				if ( json.project.editable === true ) {
+
+					var button = document.createElement( 'div' );
+					button.id = 'edit';
+					button.textContent = 'EDIT';
+					button.addEventListener( 'click', function ( event ) {
+
+						var url = location.href.split( '/' ).slice( 0, - 1 ).join( '/' );
+						window.open( 'http://threejs.org/editor/#file=' + url + '/app.json' );
+
+					}, false );
+					document.body.appendChild( button );
+
+				}
+
+				window.addEventListener( 'resize', function () {
+					player.setSize( window.innerWidth, window.innerHeight );
+				} );
+
+			} );
+
+		</script>
+    </body>
 </html>
