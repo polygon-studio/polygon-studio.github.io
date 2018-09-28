@@ -1,96 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta charset=utf-8>
-        <title>Polygon.Studio</title>
-	<style>
-		#bg1 {
-			color : white;
+        <title>Polygon . Studio</title>
+        <meta charset=utf-8>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <script src="js/three.js"></script>
+        <script src="js/loaders/GLTFLoader.js"></script>
+        <script src="js/Detector.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/slideshow.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+            }
 
-			background-color: rgba(0, 0, 0, 0.5);
+            body {
+                background-color: black;
+                margin: 0;
+                overflow: hidden;
+            }
 
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			z-index: 100;
-			display: block;
-		}
-
-		#bg2 {
-			background-color: rgba(0, 0, 10, 0.8);
-			
-			position: relative;
-			width: auto;
-		}
-
-		h1 {
-			padding: 10% 0;
-			text-align: center;
-			font-family: "Courier New", Courier, monospace;
-			letter-spacing: 5px;
-			text-shadow: 2px 2px #000000;
-		}
-
-		p {
-			text-align: center;
-		}
-		
-		a {
-			text-align: center;
-		}
-
-		a:link {
-			color: yellow;
-		}
-
-		a:visited {
-			color: aqua;
-		}
-	</style>
+            .overlay {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <script>
+            function show(shown) {
+                // Hide all the elements
+                document.getElementById('Home').style.display='none';
+                document.getElementById('Projects').style.display='none';
+                document.getElementById('About').style.display='none';
+                document.getElementById('Contact').style.display='none';
+                // Show our selected element
+                document.getElementById(shown).style.display='block';
+                return false;
+            }
+        </script>
     </head>
-    <body ontouchstart="">
-	<div id="bg1">
-		<h1>Welcome to the Polygon Studio</h1>
-		<p>Choose a mode.</p>
-		<div id="bg2">
-		<p><a href="https://github.com/polygon-studio">Github</a> | <a href="https://sketchfab.com/coropa">Sketchfab</a> | <a href="https://play.google.com/store/apps/developer?id=Memico">Mobile</a></p>
-		</div>
-	</div>
-        <!-- 3D Canvas --> 		<script src="js/three.min.js"></script> 		<script src="js/app.js"></script> 		 		<script>
+    <body>
+        <div class="overlay">
+            <div class="header">
+                <ul>
+                    <li><a href=# onclick="return show('Home')">Home</a></li>
+                    <li><a href=# onclick="return show('Projects')">Projects</a></li>
+                    <li><a href=# onclick="return show('About')">About</a></li>
+                    <li><a href=# onclick="return show('Contact')">Contact</a></li>
+                </ul>
+            </div>
 
-			var loader = new THREE.XHRLoader();
-			loader.load( 'app.json', function ( text ) {
+            <div id="Home">
+                <br><br>
+                <h1>Welcome to Polygon.Studio</h1>
+            </div>
 
-				var json = JSON.parse( text );
+            <div id="Projects" style="display:none">
+                <br><br>
+                <h1>Projects</h1>
+                <div class="center">
+                    <p style="text-align:center">Here's a sample of some of my projects</p>
+                    <div style="display:flex">
+                        <div style="width:100%">
+                            <h2>Saturn Polygon Tool</h2>
+                            <p>
+                                This tool is designed to help with the development of homebrew on the Sega Saturn. The unique
+                                architecture of the console, particularly the VDP 1 and 2 GPUs provides a unique challenge 
+                                for bringing 3D graphics the Saturn. This tool was written in Python and works the with Blender
+                                to convert 3D geometry into textured sprite quads that can be used in Saturn development with 
+                                the official SGL SDK or the open source Jo Engine.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="img/s_icon.png" alt="Sega Saturn" style="max-width: 128px">
+                        </div>
+                    </div>
+                    <br>
+                    <div style="display:flex">
+                        <div style="width:100%">
+                            <h2>Pugi</h2>
+                            <p>
+                                Pugi is one of the first projects I developed for the mobile platform. It's a marble madness style game 
+                                where the player must get the titular character Pugi to the end of each stage as quickly as possible 
+                                picking up stars for points and hourglasses to extend time. The game itself will never end however, 
+                                that's because it uses a procedural level generation algorithm to endlessly create obstacle courses.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="img/p_icon.png" alt="Pugi" style="max-width: 128px">
+                        </div>
+                    </div>
+                    <br>
+                    <div style="display:flex">
+                        <div style="width:100%">
+                            <h2>Hammerkid Pocket</h2>
+                            <p>
+                                Hammerkid Pocket is a side game of one of my pet projects, this builds upon the endless structure of Pugi
+                                with a more advanced level generation algorithm. The levels created by the algorithm are more complex and
+                                allow for paths to overlap each other while still being able to create consistently completable levels.
+                                The hills and islands created by the algorithm allow for more interesting levels that the player can fully
+                                explore utilizing full 3D character control.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="img/h_icon.png" alt="Hammerkid Pocket" style="max-width: 128px">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-				var player = new APP.Player();
-				player.load( json );
-				player.setSize( window.innerWidth, window.innerHeight );
-				player.play();
+            <div id="About" style="display:none">
+                <br><br>
+                <h1>About</h1>
+                <div class="center">
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <img class="slideImg" src="img/bstr.png"/>
+                        </div>
 
-				document.body.appendChild( player.dom );
+                        <div class="mySlides fade">
+                            <img class="slideImg" src="img/hmkid.png"/>
+                        </div>
 
-				if ( json.project.editable === true ) {
+                        <div class="mySlides fade">
+                            <img class="slideImg" src="img/hland.png"/>
+                        </div>
 
-					var button = document.createElement( 'div' );
-					button.id = 'edit';
-					button.textContent = 'EDIT';
-					button.addEventListener( 'click', function ( event ) {
+                        <div class="mySlides fade">
+                            <img class="slideImg" src="img/dmona.png"/>
+                        </div>
 
-						var url = location.href.split( '/' ).slice( 0, - 1 ).join( '/' );
-						window.open( 'http://threejs.org/editor/#file=' + url + '/app.json' );
+                        <div class="mySlides fade">
+                            <img class="slideImg" src="img/appa.png"/>
+                        </div>
+                    </div>
 
-					}, false );
-					document.body.appendChild( button );
+                    <div style="float: left; width: 50%; color:white; text-shadow: 2px 2px 1px black">
+                        I'm a programmer and designer with a passion for creating interactive media and computer graphics. 
+                        <br><br>
+                        My 3D journey started with modding games using 3D model creation tools like Milkshape and Gmax. 
+                        Once my desire to create models evolved into a desire to bring them to life I delved into the world 
+                        of programming. I started with Dark Basic before moving on to C wading my way through countless 3D 
+                        engines during the great engine wars of the mid 2000's before Unity and UDK appeared and cleaned house.
+                        <br><br>
+                        I have experience developing not only for computers, but have also released products on mobile and worked
+                        with propietary hardware like video game consoles.
+                    </div>
+                </div>
+            </div>
 
-				}
-
-				window.addEventListener( 'resize', function () {
-					player.setSize( window.innerWidth, window.innerHeight );
-				} );
-
-			} );
-
-		</script>
+            <div id="Contact" style="display:none">
+                <br><br>
+                <h1>Contact</h1>
+                <div class="contactform">
+                    <form action="php/contact.php">
+                        <label for="cf_name">Name:</label>
+                        <input type="text" id="cf_name" name="Name" placeholder="Your name..." required>
+    
+                        <label for="cf_email">Email:</label>
+                        <input type="text" id="cf_mail" name="Email" placeholder="Your email address..." required>
+    
+                        <label for="cf_message">Message:</label>
+                        <textarea id="message" name="cf_message" placeholder="Your message..." style="height:200px"></textarea required>
+    
+                        <input type="submit" value="Submit">
+                    </form>        
+                </div>
+            </div>
+        
+            <div class="links">
+                <p class="linktext">
+                    <a href="https://github.com/polygon-studio" target="_top">Github</a> |
+                    <a href="https://play.google.com/store/apps/developer?id=Memico" target="_top">Mobile</a> |
+                    <a href="https://sketchfab.com/coropa" target="_top">Sketchfab</a> |
+                </p>
+            </div>
+        </div>
+        <script src="js/scene.js"></script>
+        <script src="js/slideshow.js"></script>
     </body>
 </html>

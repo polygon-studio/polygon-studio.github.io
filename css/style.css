@@ -1,0 +1,127 @@
+h1 {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 5px;
+    color: white;
+    text-shadow: 5px 5px rgba(34, 0, 114, 0.918);
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    color: whitesmoke;
+    text-shadow: 2px 2px 1px black
+}
+
+p {
+    color: whitesmoke;
+    text-align: left;
+    word-wrap: break-word;
+    text-shadow: 2px 2px 1px black
+}
+
+.linktext {
+    color: white;
+    text-align: center;
+}
+
+a {
+    text-align: center;
+}
+
+a:link {
+    color: yellow;
+}
+
+a:visited {
+    color: aqua;
+}
+
+#slideshow {
+    position: relative;
+    width: 420px;
+    height: 340px;
+    padding: 10px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    position: fixed;
+    background-color: #48008333;
+    top: 0;
+    width: 100%
+}
+
+.links {
+    position: fixed;
+    background-color: #48008333;
+    bottom: 0;
+    width: 100%;
+}
+
+.center {
+    background-color: #48008380;
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 840px;
+    overflow: auto;
+}
+
+.contactform {
+    background-color: #48008380;
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 400px;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #00179b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #00127a;
+}
+
+label {
+    color: white;
+}
+
+ul {
+    list-style-type: square;
+    margin:  0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    list-style-type: none;
+    float: left;;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #160049
+}

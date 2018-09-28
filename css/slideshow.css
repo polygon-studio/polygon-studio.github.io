@@ -1,0 +1,32 @@
+*{box-sizing: border-box}
+
+.slideshow-container {
+    padding-left: 10%;
+}
+
+.mySlides {
+    display: none;
+}
+
+.slideImg {
+    display: block;
+    width: 50%;
+    float: right;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
