@@ -180,56 +180,6 @@ function Init()
                     );
                     npcPool.push( char );
                 }, 1000);
-
-                setTimeout( function () {
-                    let char = new NPC( 'Jam' );
-                    char.Init( 
-                        'models/computer/jam.gltf',
-                        node.position,
-                        new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
-                    );
-                    npcPool.push( char );
-                }, 15000);
-
-                setTimeout( function () {
-                    let char = new NPC( 'Chup Chup' );
-                    char.Init( 
-                        'models/computer/chup.gltf',
-                        node.position,
-                        new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
-                    );
-                    npcPool.push( char );
-                }, 30000);
-
-                setTimeout( function () {
-                    let char = new NPC( 'Mona' );
-                    char.Init( 
-                        'models/computer/mona.gltf',
-                        node.position,
-                        new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
-                    );
-                    npcPool.push( char );
-                }, 60000);
-
-                setTimeout( function () {
-                    let char = new NPC( 'Grill' );
-                    char.Init( 
-                        'models/computer/girl.gltf',
-                        node.position,
-                        new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
-                    );
-                    npcPool.push( char );
-                }, 75000);
-
-                setTimeout( function () {
-                    let char = new NPC( 'Appa' );
-                    char.Init( 
-                        'models/computer/appa.gltf',
-                        node.position,
-                        new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
-                    );
-                    npcPool.push( char );
-                }, 90000);
             }
         });
     }, undefined, function ( e ) {
