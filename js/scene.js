@@ -15,7 +15,7 @@ function NPC ( name )
     this.switchStateTimer = 5;
     this.torque = 0;
     this.raycast = null;
-    this.rayHeight = new THREE.Vector3( 0, 0.1, 0 );
+    this.rayHeight = new THREE.Vector3( 0, 0, 0 );
     this.fwdDir = new THREE.Vector3();
 
     this.states = {
@@ -172,14 +172,64 @@ function Init()
             if ( node.name == "Spawn" ) {
                 // Create our characters
                 setTimeout( function () {
-                    let magus = new NPC( 'Magus' );
-                    magus.Init( 
+                    let char = new NPC( 'Magus' );
+                    char.Init( 
                         'models/computer/magus.gltf',
                         node.position,
                         new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
                     );
-                    npcPool.push( magus );
+                    npcPool.push( char );
                 }, 1000);
+
+                setTimeout( function () {
+                    let char = new NPC( 'Jam' );
+                    char.Init( 
+                        'models/computer/jam.gltf',
+                        node.position,
+                        new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
+                    );
+                    npcPool.push( char );
+                }, 15000);
+
+                setTimeout( function () {
+                    let char = new NPC( 'Chup Chup' );
+                    char.Init( 
+                        'models/computer/chup.gltf',
+                        node.position,
+                        new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
+                    );
+                    npcPool.push( char );
+                }, 30000);
+
+                setTimeout( function () {
+                    let char = new NPC( 'Mona' );
+                    char.Init( 
+                        'models/computer/mona.gltf',
+                        node.position,
+                        new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
+                    );
+                    npcPool.push( char );
+                }, 60000);
+
+                setTimeout( function () {
+                    let char = new NPC( 'Grill' );
+                    char.Init( 
+                        'models/computer/girl.gltf',
+                        node.position,
+                        new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
+                    );
+                    npcPool.push( char );
+                }, 75000);
+
+                setTimeout( function () {
+                    let char = new NPC( 'Appa' );
+                    char.Init( 
+                        'models/computer/appa.gltf',
+                        node.position,
+                        new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
+                    );
+                    npcPool.push( char );
+                }, 90000);
             }
         });
     }, undefined, function ( e ) {
