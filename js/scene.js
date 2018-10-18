@@ -189,7 +189,7 @@ function Init()
                         new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
                     );
                     npcPool.push( char );
-                }, 30000);
+                }, 60000);
                 
                 setTimeout( function () {
                     let char = new NPC( 'Chup Chup' );
@@ -199,7 +199,7 @@ function Init()
                         new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
                     );
                     npcPool.push( char );
-                }, 60000);
+                }, 120000);
                 
                 setTimeout( function () {
                     let char = new NPC( 'Mona' );
@@ -209,7 +209,7 @@ function Init()
                         new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
                     );
                     npcPool.push( char );
-                }, 90000);
+                }, 180000);
                 
                 setTimeout( function () {
                     let char = new NPC( 'Grill' );
@@ -219,7 +219,7 @@ function Init()
                         new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
                     );
                     npcPool.push( char );
-                }, 120000);
+                }, 240000);
                 
                 setTimeout( function () {
                     let char = new NPC( 'Appa' );
@@ -229,7 +229,7 @@ function Init()
                         new THREE.Euler( 0, THREE.Math.degToRad(-90), 0)
                     );
                     npcPool.push( char );
-                }, 150000);
+                }, 300000);
             }
         });
     }, undefined, function ( e ) {
